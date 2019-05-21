@@ -38,9 +38,11 @@ public class MainActivity extends AppCompatActivity {
         // Initialize the Amazon Cognito credentials provider
         cognitoProvider = new CognitoCachingCredentialsProvider(
                 getApplicationContext(),
-                "us-east-2:XXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXX", // Identity pool ID
+                "us-east-2:919517f1-1b67-4eae-bae4-714c116b2dda", // Identity pool ID
                 Regions.US_EAST_2 // Region
         );
+
+        ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION}, 1);
 
         if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
 
